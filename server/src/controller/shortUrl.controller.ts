@@ -8,7 +8,7 @@ export async function createShortUrl(req: Request, res: Response) {
 
   // Create shortUrl
   const newUrl = await shortUrl.create({ destination });
-
+  res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
   // Return shortUrl
   res.send(newUrl);
 }

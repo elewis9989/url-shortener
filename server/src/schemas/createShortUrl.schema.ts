@@ -2,6 +2,8 @@ import { object, string } from 'yup';
 
 export default object({
   body: object({
-    destination: string().required('Destination is required'),
+    destination: string()
+      .url('Must be a valid URL')
+      .required('Destination is required'),
   }),
 });
